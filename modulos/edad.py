@@ -16,7 +16,6 @@ def deteccion_edad(img, modelo):
 
     cajas_delimitadoras = sorted(cajas_delimitadoras, key = lambda v: v[0])
 
-    digitos = []
     edad_predicha = ''
 
     for (x, y, w, h) in cajas_delimitadoras:
