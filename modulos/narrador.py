@@ -1,3 +1,10 @@
+import edge_tts
+import asyncio
+import pygame
+
+voz_elegida = "es-ES-AlvaroNeural" 
+archivo_salida = "cuento.mp3"
+
 async def crear_audiolibro(cuento):
     
     comunicador = edge_tts.Communicate(cuento, voz_elegida)
@@ -14,4 +21,10 @@ def reproducir_audio(archivo):
     
     while pygame.mixer.music.get_busy():
         pygame.time.Clock().tick(10)
+    
+    pygame.mixer.music.stop() 
+
+    pygame.mixer.music.unload()
+
+    pygame.mixer.quit()
 
