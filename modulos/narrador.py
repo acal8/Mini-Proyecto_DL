@@ -3,9 +3,8 @@ import asyncio
 import pygame
 
 voz_elegida = "es-ES-AlvaroNeural" 
-archivo_salida = "cuento.mp3"
 
-async def crear_audiolibro(cuento):
+async def crear_audiolibro(cuento, archivo_salida = "cuento.mp3"):
     
     comunicador = edge_tts.Communicate(cuento, voz_elegida)
     await comunicador.save(archivo_salida)
